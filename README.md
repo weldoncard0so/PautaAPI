@@ -79,7 +79,7 @@ POST http://localhost:8080/votos
 {
     "id_pauta": 1,
     "id_cooperado": 1,
-    "cpf": "10338927425",
+    "cpf": "43980567001",
     "voto": "Sim"
 }
 ``` 
