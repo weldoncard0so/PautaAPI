@@ -10,10 +10,7 @@
  
  ### Docker
  
- ### Docker-compose
- 
  ### Java 11
- 
  
  
 # Executar testes automatizados:
@@ -25,26 +22,11 @@ mvn test -P dev
 ```
 mvn package -DskipTests
 ``` 
-### Construir imagem
-```
-docker build -t desafio-pauta .
-``` 
-### Subir stack
-```
-docker-compose -f docker-compose.yml up -d
-```
 
 # Swagger
 
 http://localhost:8080/swagger-ui/
 
-
-# Versionamento:
-###Atenção no parâmetro no header da requisição :
-
-```
-Api-Version = 1
-```
 
 ### Cadastrar Pauta
 
@@ -56,7 +38,7 @@ POST http://localhost:8080/pautas
 }
 ``` 
 
-### Abrir Sessão
+### Abrir sessão de pauta
 
 ```
 POST http://localhost:8080/pautas/abrir
@@ -71,6 +53,8 @@ OU
 {
     "id_pauta": 1,
 }
+
+Definido para 1 minuto por default
 ```
 ### Votar em uma pauta
 ```
@@ -84,7 +68,7 @@ POST http://localhost:8080/votos
 }
 ``` 
 
-### Consultar resultado da pauta
+### Consultar resultado da pauta por ID
 ```
 GET http://localhost:8080/resultados/{id}
 ```
