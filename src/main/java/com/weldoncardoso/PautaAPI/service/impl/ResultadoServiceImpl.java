@@ -30,7 +30,7 @@ public class ResultadoServiceImpl implements ResultadoService {
 
     @Override
     public ResultadoDTO obterResultado(Long id) {
-        logger.info("obtendo resultado de pauta numero: " + id);
+        logger.info("Obtendo resultado de pauta numero: " + id);
         Pauta pauta = pautaService.buscarPorId(id);
         return construirResultado(pauta);
     }
