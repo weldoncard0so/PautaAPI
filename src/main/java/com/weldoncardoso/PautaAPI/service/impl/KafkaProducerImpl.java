@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaProducerImpl implements KafkaProducerService {
 
-    public static final String TOPIC = "my_topic";
+    public static final String TOPIC = "Pauta-API;
 
     public KafkaTemplate<String, String> kafkaTemplate;
 
