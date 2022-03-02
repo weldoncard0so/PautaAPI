@@ -30,7 +30,7 @@ public class PautaServiceImpl implements PautaService {
     @Override
     public Pauta cadastrar(Pauta pauta) {
         pauta.obterStatusFechadaCasoNulo(pauta);
-        logger.info("salvando pauta: " + pauta);
+        logger.info("Salvando pauta: " + pauta);
         return pautaRepository.save(pauta);
     }
 
@@ -40,13 +40,13 @@ public class PautaServiceImpl implements PautaService {
         Pauta pauta = buscarPorId(sessaoDTO.getIdPauta());
         pauta.abrirVotacao(sessaoDTO);
 
-        logger.info("salvando pauta: " + pauta);
+        logger.info("Salvando pauta: " + pauta);
         return pautaRepository.save(pauta);
     }
 
     @Override
     public Pauta buscarPorId(Long id) {
-        logger.info("abrindo nova Pauta por id: " + id);
+        logger.info("Abrindo nova pauta por id: " + id);
         return pautaRepository.findById(id).orElseThrow(() -> {
             throw new PautaNaoEncontradaException(PAUTA_NAO_ENCONTRADA_EXCEPTION);
         });
@@ -61,7 +61,7 @@ public class PautaServiceImpl implements PautaService {
     @Override
     public Pauta atualizarPauta(Pauta pauta) {
 
-        logger.info("atualizando pauta: " + pauta);
+        logger.info("Atualizando pauta: " + pauta);
         return this.pautaRepository.save(pauta);
     }
 }
