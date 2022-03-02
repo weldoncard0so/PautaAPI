@@ -40,7 +40,7 @@ public class VotoServiceImpl implements VotoService {
     public Voto cadastrar(Voto voto) {
         votoValidador.validar(voto);
         pautaValidador.validar(voto.getIdPauta());
-        logger.info("cadastrando novo voto: " + voto);
+        logger.info("Cadastrando novo voto: " + voto);
         return votoRepository.save(voto);
     }
 
