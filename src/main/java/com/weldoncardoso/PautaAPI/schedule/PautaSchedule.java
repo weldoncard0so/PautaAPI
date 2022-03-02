@@ -39,7 +39,7 @@ public class PautaSchedule {
         pautaService.consultarPautasAbertas().stream()
                 .filter(Pauta::estahFechadaIhNaoFoiEnviada).forEach(pauta -> {
             ResultadoDTO resultadoDTO = resultadoService.obterResultado(pauta.getId());
-            atulizarResultado(resultadoDTO);
+            atualizarResultado(resultadoDTO);
             logger.info("Enviando resultado :" + resultadoDTO);
             kafkaProducerService.writeMessage(toJson(resultadoDTO));
 
@@ -49,7 +49,7 @@ public class PautaSchedule {
         });
     }
 
-    private void atulizarResultado(ResultadoDTO resultadoDTO) {
+    private void atualizarResultado(ResultadoDTO resultadoDTO) {
         resultadoDTO.setStatus(FECHADA);
     }
 
